@@ -31,7 +31,7 @@ let end = res - qwerty;
 console.log(end);
 
 // 6. Создайте переменную str и присвойте ей значение Hello, Palmo. Результат выведите в alert()
-let str = 'Hello';
+let str = 'Hello, Palmo';
 alert(str);
 
 // 7. Создайте переменную name с вашим имененем и age с возрастом. В alert() выведите результат Я (имя), мне (возраст). (значения подставить из переменных)
@@ -43,9 +43,10 @@ alert("Я" + " " + name + ", " + "мне" + " " + age);
 let seconds,hour,day,month;
 seconds = 1;
 hour = 3600 * seconds;
-day = 24 * hour;
+//day = 24 * hour;
+day = 1;
 month = 30 * day;
-console.log(month);
+console.log(hour, month);
 
 // 9. Создайте переменную с числом и возведите в квадрат
 let sqr = 3;
@@ -72,7 +73,7 @@ admin = name1;
 alert(admin);
 
 //Создайте переменную для текущего времени. Как бы вы её назвали?
-let realTime;
+let realTime = new Date();
 
 // Создайте переменную для названия выбранного товара. Как бы вы её назвали?
 let chosenProduct;
@@ -85,9 +86,9 @@ const userAge = 32;     // возраст меняется, не логично 
 
 //Создать сообщение “Hello, Palmo!”, использую 3 типа кавычек. (Используя обратные кавычки “Palmo” поместить в переменную);
 
-let string = "Hello, Palmo";
-let string1 = 'Hello, Palmo';
-let string2  = ` ${string1}`;
+let massage = "Hello, Palmo";
+let massage1 = 'Hello, Palmo';
+//let string  = ;
 
 //Что выведет данный скрипт?
 let name2 = "Ilya";
