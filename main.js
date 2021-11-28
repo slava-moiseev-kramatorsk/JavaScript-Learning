@@ -1,122 +1,152 @@
-// 1. Создайте HTML документ и подключите в него созданный JS файл.
+//1. Создайте функцию, которая проверяет является ли значние числом. Функция должна возвращать Boolean.
+/*
+function isInt(x) {
+    if (!x || !Number(x)){
+        alert("Это не число");
+        return false;
 
-// 2. Создайте переменную num и присвойте ей значение 10. Выведите значение этой переменной с помощью console.log()
-let num = 10;
-console.log(num);
+    } else {
+        alert("Это число");
+        return true;
+    }
+}
+isInt("Проверка");
+isInt(4);
+isInt();
 
-// 3. Создайте переменные first = 5 и second = 10. Выведите в console.log() их сумму, разность, произведение и частность (деление)
-let first = 5;
-let second = 10;
-console.log(first + second);
-console.log(first - second);
-console.log(first * second);
-console.log(first / second);
+ */
 
-// 4. Создайте переменные a = 3 и b = 10, их сумму присвойте в переменную result
-let a = 3;
-let b = 10;
-let result;       // or   let result = (a + b); both options are correct.
-result = (a + b);
-console.log(result);
+//2. Создайте фукнцию, которая принимает 3 числа. Возвращать должна среднее из этих 3х чисел. (Не забудьте добавить проверки на
+//то, что аргументы не пустые и являются числами).
 
-// 5. Создайте переменную bar = 20 и qwerty = 5. В переменную res присвойте разность bar - qwerty и отнемите 10.
-let bar = 20;
-let qwerty = 5;
-let res;          //   or let res = (bar - qwerty) - 10;
-res = (bar - qwerty) - 10;
-console.log(res);
+/*
+function threeNumbers(a, b,c) {
+    if(!a || !b || !c || !Number(a, b, c)){
+        alert("Неверный ввод");
+    } else if ((a > b && a < c) || (a > c && a < b)) {
+        alert("Среднее число " + " " + a);
+    } else if ((b > a && b < c) || (b > a && b < c)){
+        alert("среднее число" + " " + b);
+    } else {
+        alert("Среднее число" + " " + c);
+    }
+}
+threeNumbers(2, 4, 1);
 
-// В переменную end присвойте разность значения res и переменной qwerty
-let end = res - qwerty;
-console.log(end);
+ */
 
-// 6. Создайте переменную str и присвойте ей значение Hello, Palmo. Результат выведите в alert()
-let str = 'Hello, Palmo';
-alert(str);
+//3. Создайте фукнцию, которая принимает объект и проверяет есть ли в нем свойство 'name'. Вернуть Boolean тип.
 
-// 7. Создайте переменную name с вашим имененем и age с возрастом. В alert() выведите результат Я (имя), мне (возраст). (значения подставить из переменных)
-let name = 'Slava';
-let age = 32;
-alert("Я" + " " + name + ", " + "мне" + " " + age);
+/*
+const person = {name : "Слава", age : 32};
+ function isName(obj) {
+     alert( "name" in obj)
+ }
+isName(person);
 
-// 8. Напишите скрипт, который считает количество секунд в часе, сутках и месяце. В console.log() выведите результат
-let seconds,hour,day,month;
-seconds = 1;
-hour = 3600 * seconds;
-//day = 24 * hour;
-day = 1;
-month = 30 * day;
-console.log(hour, month);
+ */
 
-// 9. Создайте переменную с числом и возведите в квадрат
-let sqr = 3;
-sqr = Math.pow(sqr,2);
-console.log(sqr);
+//4. Создайте функцию, которая принимает объект со свойствами name и username и возвращает строку в формате Имя Фамилия.
 
-// 10. Создайте переменную d и присвойте ей значение 8. В переменную n поместите квадрат значения переменной d, а в переменную x - куб значения переменной d
-let d = 8;
-let n = Math.pow(d,2);
-let x = Math.pow(d,3);
-console.log(n, x);
+/*
+const user = {name : "Jhon", surName : "Smith"};
+
+function userInfo(obj) {
+    alert(user.name + " " + user.surName);
+}
+userInfo(user);
 
 
+ */
 
-//Объявите две переменные: admin и name.
-let admin,name1;  // name1 т.к. выше в коде уже инициализирована переменная name.
+//5. Создайте функцию, которая принимает объекте типа {name1: 200, name2: 500, name3: 400}. Функция должна вернуть сумму всех
+//свойств объекта.
 
-//Запишите строку "Джон" в переменную name.
-name1 = 'Джон';
-//Скопируйте значение из переменной name в admin.
-admin = name1;
+/*
 
-//Выведите на экран значение admin, используя функцию alert (должна показать «Джон»).
-alert(admin);
+const numbers = {first : 20, second : 10, therd : 30};
+function sumObj(obj) {
+    let sum = 0;
+    for( let int of Object.values(obj)){
+        sum += int;
+    }
+    return sum;
+}
+alert( sumObj(numbers) );
 
-//Создайте переменную для текущего времени. Как бы вы её назвали?
-let realTime = new Date();
+*/
 
-// Создайте переменную для названия выбранного товара. Как бы вы её назвали?
-let chosenProduct;
+// 6. Создайте функцию, которая принимает объект. Все ЧИСЛОВЫЕ свойства объекта нужно поделить на 2,
+//     если получилось НЕ целое число - округлить его по математическим правилами, а текстовые поменять на строку
+// Hello, Palmo. Если свойство не числовое или не текстовое - удалить его из объекта. Функция должна вернуть переделанный объект.
 
-// Создайте константу для хранения значения зеленого цвета.
-const GREEN_COLOR = '#00FF00';
+let thing = {say : "Привет", int1 : "31", int2 : "   ", double : "27,4"};
+function changeObj(obj) {
+    for (let key in obj) {
+        switch (typeof key[obj]){
+            case 'Number': obj[key] = obj[key] / 2;
+            break;
+            case 'String': obj[key] = "Hello, Palmo";
+            break;
+        }
+    }
+    return obj;
 
-// Создайте константу для хранения возраста пользователя.
-const userAge = 32;     // возраст меняется, не логично быть ему константой. const userBornDate;
+}
+changeObj(thing)
+console.log(thing);
 
-//Создать сообщение “Hello, Palmo!”, использую 3 типа кавычек. (Используя обратные кавычки “Palmo” поместить в переменную);
+// 7. Создайте игру "Викторина". Опираясь на ваши знания по JS, создайте игру, которая поочередно задаст пользователю 10 вопросов.
+//     За каждый правильный ответ начисляйте пользователю 1 балл. После ответа на все вопросы выведите сколько баллов заработал пользователь.
 
-let massage = "Hello, Palmo";
-let massage1 = 'Hello, Palmo';
-//let string  = ;
+/*
+let count = 0;
+function totalCount(x){
+    return count++;
+}
+const ask1 = prompt("Какой сейчас год ?");
+if (ask1 === "2021"){
+    totalCount();
+}
+const ask2 = prompt("Сколько будет 2 + 2 ?");
+if (ask2 === "4"){
+    totalCount();
+}
+const ask3 = prompt("Сколько будет 1 + 1 ?");
+if (ask3 === "2"){
+    totalCount();
+}
+const ask4 = prompt("Шуршит, но не шуршунчик ?");
+if (ask4 === "брат шуршунчика"){
+    totalCount();
+}
+const ask5 = prompt("Дед мороз существует ?");
+if (ask5 === "нет"){
+    totalCount();
+} else if (ask5 === "да"){
+    alert("Вынужден огорчить тебя, дружок. Пора взрослеть!")
+}
+const ask6 = prompt("Зима близко ?");
+if (ask6 === "да"){
+    totalCount();
+}
+const ask7 = prompt("Столица Украины ?");
+if (ask7 === "киев"){
+    totalCount();
+}
+const ask8 = prompt("Какой официальный второй язык Канады ?");
+if (ask8 === "французский"){
+    totalCount();
+}
+const ask9 = prompt("Сколько звезд в солнечной системе ?");
+if (ask9 === "1"){
+    totalCount();
+}
+const ask10 = prompt("Основа жизни  ?");
+if (ask10 === "вода"){
+    totalCount();
+}
+alert("Ваш счет :" + " " + count);
 
-//Что выведет данный скрипт?
-let name2 = "Ilya";
-alert(`Hello ${1}`);             // воспринимает все в ковычках как единую строку
-alert(`Hello ${"name2"}`);       // воспринимает все в ковычках как единую строку
-alert(`Hello ${name2}`);         //  <--- Правильный вариантс написания
 
-//Создайте страницу, которая спрашивает имя у пользователя и выводит его.
-let guestName = prompt("Ваше имя ?", "");
-alert(guestName);
-
-//Создайте любой вопрос и выведите результат через функцию alert
-let quest = confirm("Вам исполнилось 18 лет ?");
-alert(quest);
-
-//Преобразовать строку “12345” в число.
-let number = "12345";
-number = Number(number);
-//Преобразовать значение true в строку.
-let bool = true;
-bool = String(bool);
-//Преобразовать значение null в логический тип.
-let nul = null;
-nul = Boolean(bool);
-//Преобразовать пустую строку в логический тип.
-let empty = "  ";
-empty = Boolean(empty);
-
-
-
-
+ */
