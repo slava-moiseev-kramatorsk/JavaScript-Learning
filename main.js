@@ -80,14 +80,18 @@ alert( sumObj(numbers) );
 //     если получилось НЕ целое число - округлить его по математическим правилами, а текстовые поменять на строку
 // Hello, Palmo. Если свойство не числовое или не текстовое - удалить его из объекта. Функция должна вернуть переделанный объект.
 
-let thing = {say : "Привет", int1 : "31", int2 : "   ", double : "27,4"};
+let thing = {say : "Привет", int1 : 31, int : true,  double : 27.4 };
 function changeObj(obj) {
     for (let key in obj) {
-        switch (typeof key[obj]){
-            case 'Number': obj[key] = obj[key] / 2;
-            break;
-            case 'String': obj[key] = "Hello, Palmo";
-            break;
+        if (typeof obj[key] !== 'number' && typeof obj[key] !== 'string'){
+            delete obj[key];
+        } else if (typeof obj[key] === 'number'){
+            obj[key] = obj[key] / 2;
+            if(!Number.isInteger(obj[key])){
+                obj[key] = Math.round(obj[key]);
+            }
+        } else if (typeof obj[key] === 'string'){
+            obj[key] = "Hello, Palmo";
         }
     }
     return obj;
