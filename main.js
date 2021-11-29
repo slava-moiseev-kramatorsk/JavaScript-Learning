@@ -80,6 +80,7 @@ alert( sumObj(numbers) );
 //     если получилось НЕ целое число - округлить его по математическим правилами, а текстовые поменять на строку
 // Hello, Palmo. Если свойство не числовое или не текстовое - удалить его из объекта. Функция должна вернуть переделанный объект.
 
+/*
 let thing = {say : "Привет", int1 : 31, int : true,  double : 27.4 };
 function changeObj(obj) {
     for (let key in obj) {
@@ -100,12 +101,14 @@ function changeObj(obj) {
 changeObj(thing)
 console.log(thing);
 
+ */
+
 // 7. Создайте игру "Викторина". Опираясь на ваши знания по JS, создайте игру, которая поочередно задаст пользователю 10 вопросов.
 //     За каждый правильный ответ начисляйте пользователю 1 балл. После ответа на все вопросы выведите сколько баллов заработал пользователь.
 
-/*
+
 let count = 0;
-function totalCount(x){
+function totalCount(){
     return count++;
 }
 const ask1 = prompt("Какой сейчас год ?");
@@ -121,25 +124,25 @@ if (ask3 === "2"){
     totalCount();
 }
 const ask4 = prompt("Шуршит, но не шуршунчик ?");
-if (ask4 === "брат шуршунчика"){
+if (ask4.toLowerCase() === "брат шуршунчика"){
     totalCount();
 }
 const ask5 = prompt("Дед мороз существует ?");
-if (ask5 === "нет"){
+if (ask5.toLowerCase() === "нет"){
     totalCount();
-} else if (ask5 === "да"){
+} else if (ask5.toLowerCase() === "да"){
     alert("Вынужден огорчить тебя, дружок. Пора взрослеть!")
 }
 const ask6 = prompt("Зима близко ?");
-if (ask6 === "да"){
+if (ask6.toLowerCase() === "да"){
     totalCount();
 }
 const ask7 = prompt("Столица Украины ?");
-if (ask7 === "киев"){
+if (ask7.toLowerCase() === "киев"){
     totalCount();
 }
 const ask8 = prompt("Какой официальный второй язык Канады ?");
-if (ask8 === "французский"){
+if (ask8.toLowerCase() === "французский"){
     totalCount();
 }
 const ask9 = prompt("Сколько звезд в солнечной системе ?");
@@ -147,10 +150,9 @@ if (ask9 === "1"){
     totalCount();
 }
 const ask10 = prompt("Основа жизни  ?");
-if (ask10 === "вода"){
+if (ask10.toLowerCase() === "вода"){
     totalCount();
 }
 alert("Ваш счет :" + " " + count);
 
 
- */
