@@ -31,24 +31,24 @@
 // Напишите функцию, которая принимает массив объектов. Функция должна вернуть
 // массив только с теми объектами, у которых есть свойство name
 //4
-let arr = [
-    {
-        name : "Pasha",
-        age : 27
-    },
-    {   name : "Sasha",
-        age : 14
-    },
-    {
-        age : 30,
-        height : 180
-    }
-];
-let arr1 = arr.filter(function (item){
-    return item.name;
-});
-
-console.log(arr1);
+// let arr = [
+//     {
+//         name : "Pasha",
+//         age : 27
+//     },
+//     {   name : "Sasha",
+//         age : 14
+//     },
+//     {
+//         age : 30,
+//         height : 180
+//     }
+// ];
+// let arr1 = arr.filter(function (item){
+//     return item.name;
+// });
+//
+// console.log(arr1);
 
 // Напишите функцию, которая принимает два массива. Функция должна вернуть результат
 // объединения этих массивов без дубликатов
@@ -56,6 +56,18 @@ console.log(arr1);
 
 // Напишите функцию, которая преобразует строки snake_case в camelCase.
 //     Например modifyString('super-user-name') // вернуть 'superUserName'
+
+
+
+//
+// let str = "snake_case";
+//
+// function modifyString(str) {
+//     let arr = str.split("-");
+//
+// }
+
+
 
 // Напишите функцию, которая принимает значение с математическим выражением и возвращает результат его решения.
 //     Например: calc('5 + 10') // вернет 15
@@ -88,28 +100,58 @@ console.log(arr1);
 // Напишите функцию, которая проверяет строку на спам. Функция должна возвращать true,
 //     если в строке есть 2 одинаковых слова, и false - если все слова уникальны.
 
+
+
 // Напишите функцию, которая проверяет строку на нецензурную лексику. Создайте массив,
 //     который будет содержать слова, которые нельзя пропускать. Функция должна принимать строку и
 // проверять наличие в ней слов из массива, которые нужно пропускать.
 //     Если в строке есть слово из массива - вернуть true, если нет - false.
 
+
+
 // Напишите функцию, которая принимает массив. Функция должна вернуть предложение только из строковых значений массива. Например:
 // arrayToSentence(['Привет', 1, null, 'как', '{}', 'дела']) // вернуть Привет как дела
 
+let arr = ['Привет', 1, null, 'как', '{}', 'дела'];
+let newStr;
+function returnOnlyString() {
+
+     for (let i = 0; i < arr; i++) {
+         if (arr[i] === String(arr[i])){
+             newStr = newStr + arr[i];
+                                                                    // не работает !
+         }
+    }
+    return newStr;
+}
+returnOnlyString(arr);
+console.log(newStr);
+
 // Напишите функцию, которая принимает массив из 10 целых чисел (от 0 до 9), который возвращает строку этих чисел в форме номера телефона.
 // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
-//
+
+
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// let format1;
 // function createPhoneNumber(numbers){
 //     let format = '(xxx) xxx-xxxx';
-//
 //     for (number of numbers) {
-//         format = format.replace('x', number);
+//        format1 = format.replace(/x/g, number);
+//     }                                                                  // не работает, меняет все на 0.
+//     return format1;
 //     }
 //
-//     return format;
-// }
+//
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+// console.log(format1);
+
+
 
 // Напишите функцию, которая массив с пользователями и возвращает имя пользователя с наибольшей заработной платой. Например:
+// getHighestSalarty(users) // должно вернуть 'Marry'
+
+
 // const users = [
 //     {
 //         id: 1,
@@ -126,15 +168,73 @@ console.log(arr1);
 //     {
 //         id: 3,
 //         name: 'Poll',
-//         age: 25,
+//         age: 25,                                                               // не работает
 //         salary: 1200
-//     },
-// ]
+//     }
+// ];
 //
-// getHighestSalarty(users) // должно вернуть 'Marry'
+// function topSalary(obj) {
+//     let int = 0;
+//     for(const key in obj) {
+//         if (int < obj.salary){
+//             int = obj.salary;
+//         }
+//     }
+//     return obj.name;
+// }
+//
+// console.log(topSalary(users));
+
+
 
 // Напишите функцию, которая проверяет корректность строки. Строка должна быть не менее 3х символов
 // и не более 16ти символов, должна быть не пустая, не должна содержать числа.
 
+
+// let str = "fgdg56bf";
+//
+// function correctStr(str) {
+//     if (str.length < 3 || str.length > 16 || !str){
+//         alert("Ввод не верный");
+//     }                                                                                  // Работает
+//     for (let i = 0; i < str.length; i++) {
+//         if (Number(str[i])){
+//             alert("В строке есть цифры! ")
+//         }
+//     }
+//     return str;
+// }
+// correctStr(str);
+
+
 // Напишите функцию, которая проверяет пароль на корректность. Пароль должен быть не менее 6ти символов,
-//     должен содержать хотя бы одну цифру и хотя бы одну заглавную букву
+// должен содержать хотя бы одну цифру и хотя бы одну заглавную букву
+//
+// let password = "dfdbtd";
+//
+// function correctPas(str) {
+//     let count = 0;
+//     let count1 = 0;
+//     let char = ' ';
+//     if (str.length < 6){
+//         alert("пароль слабоват");
+//     }
+//     for (let i = 0; i < str.length; i++) {
+//         if(Number(str[i])){
+//             count++;
+//             return count;
+//         }                                                                      // не работает проверка на заглавную букву
+//         if (isNaN(str[i]) === str[i].toUpperCase()){
+//             count1++;
+//             return count1;
+//         }
+//     }
+//
+//     if (count === 0){
+//         alert("Добавьте хотябы 1 цыфру");
+//     }
+//     if (count1 === 0){
+//         alert("Введите хотябы одну заглавную букву");
+//     }
+// }
+// correctPas(password);
