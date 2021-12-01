@@ -96,6 +96,26 @@
 // 7 Напишите функцию, которая принимает значение с математическим выражением и возвращает результат его решения.
 //     Например: calc('5 + 10') // вернет 15
 
+// let a;
+// let b;
+// let result = 0;
+// let op;
+// function calc(a, b, op) {
+//
+//     switch (op) {
+//         case '+' : result = a + b;
+//         break;
+//         case '-' : result = a - b;
+//         break;
+//         case '*' : result = a * b;
+//         break;
+//         case '/' : result = a / b;
+//         break;
+//     }
+//     return result;
+// }
+//
+// console.log(calc(2, 3, '*'));
 
 
 // 8 Напишите функцию, которая принимает объект с пользователями и возвращает массив имён.
@@ -163,12 +183,14 @@
 //         for (let j = 0; j < arr.length ; j++) {
 //         if (arr[i] === arr[j]){
 //             result = true;
-//         } else result = false;
+//         } else result = false;                                        //mazafaka don`t work
 //
 //     }
 //     }
 //     return result;
 // }
+
+
 // spam(str);
 // console.log(result);
 
@@ -231,38 +253,41 @@
 // getHighestSalarty(users) // должно вернуть 'Marry'
 
 
-// const users = [
-//     {
-//         id: 1,
-//         name: 'John',
-//         age: 20,
-//         salary: 1000
-//     },
-//     {
-//         id: 2,
-//         name: 'Marry',
-//         age: 22,
-//         salary: 1500
-//     },
-//     {
-//         id: 3,
-//         name: 'Poll',
-//         age: 25,                                                               // не работает
-//         salary: 1200
-//     }
-// ];
-//
-// function topSalary(obj) {
-//     let int = 0;
-//     for(const key in obj) {
-//         if (int < obj.salary){
-//             int = obj.salary;
-//         }
-//     }
-//     return obj.name;
-// }
-//
-// console.log(topSalary(users));
+const users = [
+    {
+        id: 1,
+        name: 'John',
+        age: 20,
+        salary: 1000
+    },
+    {
+        id: 2,
+        name: 'Marry',
+        age: 22,
+        salary: 1500
+    },
+    {
+        id: 3,
+        name: 'Poll',
+        age: 25,                                                               // не работает
+        salary: 1200
+    }
+];
+// function objNames(objectsList) {
+// //     return objectsList.map(function(obj) {
+// //         return obj.name;
+
+function topSalary(obj) {
+    let int = 0;
+    for(const key in obj) {
+        if (int < obj.salary){
+            int = obj.salary;
+        }
+    }
+    return obj.name;
+}
+
+console.log(topSalary(users));
 
 
 
