@@ -61,7 +61,7 @@
 //     for (let i = 0; i < arr.length; i++) {
 //         for (let j = i + 1; j <arr.length ; j++) {               // работает
 //             if (arr[i] === arr[j])
-//                 arr.splice(j--,1);                    //  почему именно так ?????? j-- ??????
+//                 arr.splice(j--,1);
 //         }
 //
 //     }
@@ -191,6 +191,7 @@
 // }
 
 
+
 // spam(str);
 // console.log(result);
 
@@ -252,42 +253,51 @@
 // 14 Напишите функцию, которая массив с пользователями и возвращает имя пользователя с наибольшей заработной платой. Например:
 // getHighestSalarty(users) // должно вернуть 'Marry'
 
+//
+// const users = [
+//     {
+//         id: 1,
+//         name: 'John',
+//         age: 20,
+//         salary: 1000
+//     },
+//     {
+//         id: 2,
+//         name: 'Marry',
+//         age: 22,
+//         salary: 1500
+//     },
+//     {
+//         id: 3,
+//         name: 'Poll',
+//         age: 25,                                                               //  работает
+//         salary: 1200
+//     }
+// ];
+// function getHighestSalarty(users) {
+//     const max = {
+//         salary: users[0].salary,
+//         names: [ users[0].name ],
+//     };
+//
+//     users.forEach(function(user) {
+//         if (user.id !== users[0].id) {
+//             if (user.salary === max.salary ) {
+//                 max.names.push(user.name);
+//             } else {
+//                 if (user.salary > max.salary) {
+//                     max.salary = user.salary;
+//                     max.names = [ user.name ];
+//                 }
+//             }
+//         }
+//     })
+//
+//     return max.names;
+// }
+//
+// console.log(getHighestSalarty(users));
 
-const users = [
-    {
-        id: 1,
-        name: 'John',
-        age: 20,
-        salary: 1000
-    },
-    {
-        id: 2,
-        name: 'Marry',
-        age: 22,
-        salary: 1500
-    },
-    {
-        id: 3,
-        name: 'Poll',
-        age: 25,                                                               // не работает
-        salary: 1200
-    }
-];
-// function objNames(objectsList) {
-// //     return objectsList.map(function(obj) {
-// //         return obj.name;
-
-function topSalary(obj) {
-    let int = 0;
-    for(const key in obj) {
-        if (int < obj.salary){
-            int = obj.salary;
-        }
-    }
-    return obj.name;
-}
-
-console.log(topSalary(users));
 
 
 
@@ -314,31 +324,30 @@ console.log(topSalary(users));
 // 16 Напишите функцию, которая проверяет пароль на корректность. Пароль должен быть не менее 6ти символов,
 // должен содержать хотя бы одну цифру и хотя бы одну заглавную букву
 //
-// let password = "dfdbtd";
-//
-// function correctPas(str) {
-//     let count = 0;
-//     let count1 = 0;
-//     let char = ' ';
-//     if (str.length < 6){
-//         alert("пароль слабоват");
-//     }
-//     for (let i = 0; i < str.length; i++) {
-//         if(Number(str[i])){
-//             count++;
-//             return count;
-//         }
-//         if (isNaN(str[i]) === str[i].toUpperCase()){                                  // не работает проверка на заглавную букву
-//             count1++;
-//             return count1;
-//         }
-//     }
-//
-//     if (count === 0){
-//         alert("Добавьте хотябы 1 цыфру");
-//     }
-//     if (count1 === 0){
-//         alert("Введите хотябы одну заглавную букву");
-//     }
-// }
-// correctPas(password);
+let password = "aaa7aaa";
+
+function correctPas(str) {
+    let count = 0;
+    let count1 = 0;
+    if (str.length < 6){
+        alert("пароль слабоват");
+    }
+    for (let i = 0; i < str.length; i++) {
+        if(isFinite(str[i])){
+            count++;
+            return count;
+        }
+        if (typeof (str[i]) ==='string' && str[i] === str[i].toUpperCase()){                                  // не работает проверка на заглавную букву
+            count1++;
+            return count1;
+        }
+    }
+
+    if (count === 0){
+        alert("Добавьте хотябы 1 цыфру");
+    }
+    if (count1 === 0){
+        alert("Введите хотябы одну заглавную букву");
+    }
+}
+correctPas(password);
