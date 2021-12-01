@@ -53,10 +53,26 @@
 // 5 Напишите функцию, которая принимает два массива. Функция должна вернуть результат
 // объединения этих массивов без дубликатов
 
+// let arr1 = [1,2,3,4];
+// let arr2 = [1,6,7,8];
+// let arr = [];
+// function newArr() {
+//     arr = arr1.concat(arr2);
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j <arr.length ; j++) {               // работает
+//             if (arr[i] === arr[j])
+//                 arr.splice(j--,1);                    //  почему именно так ?????? j-- ??????
+//         }
+//
+//     }
+//     return arr;
+// }
+// console.log(newArr(arr1));
+// console.log(arr);
+// console.log(arr1);
 
 // 6 Напишите функцию, которая преобразует строки snake_case в camelCase.
 //     Например modifyString('super-user-name') // вернуть 'superUserName'
-
 
 
 
@@ -79,6 +95,8 @@
 
 // 7 Напишите функцию, которая принимает значение с математическим выражением и возвращает результат его решения.
 //     Например: calc('5 + 10') // вернет 15
+
+
 
 // 8 Напишите функцию, которая принимает объект с пользователями и возвращает массив имён.
 // Функция должна вернуть ['John', 'Marry', 'Poll']
@@ -117,6 +135,22 @@
 //     который является числом - умножить на 2, строки - преобразовать в массив,
 //     где каждый символ - отдельный элемент массива. Функция должна вернуть измененный объект
 
+
+
+// let arr = [1,2,3, 'Hello', 'focus', 5];
+// function changeArr() {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (typeof arr[i] === 'number' ){
+//             arr[i] = arr[i] * 2;
+//         } else if (typeof arr[i] === 'string'){
+//             arr[i] = arr[i].split("");
+//         }
+//     }
+//     return arr;
+// }
+//
+// console.log(changeArr(arr));
+
 // 10 Напишите функцию, которая проверяет строку на спам. Функция должна возвращать true,
 //     если в строке есть 2 одинаковых слова, и false - если все слова уникальны.
 // const str = " palmo palmo";
@@ -138,16 +172,16 @@
 // spam(str);
 // console.log(result);
 
-const arr1 = [ 'word1', 'word2', 'word3' ];
-const arr2 = [ 'word1', 'word2', 'word1', 'word3', 'word3' ];
-
-function isSpam(arr) {
-    const set = new Set(arr);
-
-    return set.size < arr.length;
-}
-
-console.log( isSpam(arr1) );
+// const arr1 = [ 'word1', 'word2', 'word3' ];
+// const arr2 = [ 'word1', 'word2', 'word1', 'word3', 'word3' ];
+//
+// function isSpam(arr) {
+//     const set = new Set(arr);
+//
+//     return set.size < arr.length;
+// }
+//
+// console.log( isSpam(arr1) );
 
 // 11 Напишите функцию, которая проверяет строку на нецензурную лексику. Создайте массив,
 //     который будет содержать слова, которые нельзя пропускать. Функция должна принимать строку и
@@ -268,8 +302,8 @@ console.log( isSpam(arr1) );
 //         if(Number(str[i])){
 //             count++;
 //             return count;
-//         }                                                                      // не работает проверка на заглавную букву
-//         if (isNaN(str[i]) === str[i].toUpperCase()){
+//         }
+//         if (isNaN(str[i]) === str[i].toUpperCase()){                                  // не работает проверка на заглавную букву
 //             count1++;
 //             return count1;
 //         }
