@@ -11,7 +11,17 @@
 // 2 Напишите функцию truncate(str, maxlength), которая проверяет длину строки str,
 //     и если она превосходит maxlength – заменяет конец str на "...",
 //     так чтобы ее длина стала равна maxlength
+let str = "какая длинная строка, тут наверно 44 симолов"
+let maxlength = 30;
+function truncate() {
+    let str1;
+    if (str.length > maxlength){
+        str1.length = maxlength;
+    }
+return str;
+}
 
+console.log(truncate(str, maxlength));
 // 3 Напишите функцию getShortName(fullName), которая преобразует полное ФИО fullName в краткое.
 //     Например getShortName("Иванов Сергей Петрович"), функция должна вернуть "Иванов С.П."
 //3
@@ -214,13 +224,13 @@
 
 
 // 12 Напишите функцию, которая принимает массив. Функция должна вернуть предложение только из строковых значений массива. Например:
-// arrayToSentence(['Привет', 1, null, 'как', '{}', 'дела']) // вернуть Привет как дела
+// arrayToSentence(['Привет', 1, null, 'как', {}, 'дела']) // вернуть Привет как дела
 
-// let arr = ['Привет', 1, null, 'как', '{}', 'дела'];
+// let arr = ['Привет', 1, null, 'как', {}, 'дела'];
 // let newStr = "";
 // function returnOnlyString(arr) {
 //     for (let i = 0; i < arr.length; i++) {
-//         if (typeof arr[i] === 'string' || Number.isNaN(arr[i])){                         // не работает на {}
+//         if (typeof arr[i] === 'string' || Number.isNaN(arr[i]) && arr[i].match(/[a-z]/g)){                         //  работает
 //             newStr = newStr + " " + arr[i];
 //         }
 //     }
@@ -324,30 +334,30 @@
 // 16 Напишите функцию, которая проверяет пароль на корректность. Пароль должен быть не менее 6ти символов,
 // должен содержать хотя бы одну цифру и хотя бы одну заглавную букву
 //
-let password = "aaa7aaa";
-
-function correctPas(str) {
-    let count = 0;
-    let count1 = 0;
-    if (str.length < 6){
-        alert("пароль слабоват");
-    }
-    for (let i = 0; i < str.length; i++) {
-        if(isFinite(str[i])){
-            count++;
-            return count;
-        }
-        if (typeof (str[i]) ==='string' && str[i] === str[i].toUpperCase()){                                  // не работает проверка на заглавную букву
-            count1++;
-            return count1;
-        }
-    }
-
-    if (count === 0){
-        alert("Добавьте хотябы 1 цыфру");
-    }
-    if (count1 === 0){
-        alert("Введите хотябы одну заглавную букву");
-    }
-}
-correctPas(password);
+// let password = "aaa7aaa";
+//
+// function correctPas(str) {
+//     let count = 0;
+//     let count1 = 0;
+//     if (str.length < 6){
+//         alert("пароль слабоват");
+//     }
+//     for (let i = 0; i < str.length; i++) {
+//         if(isFinite(str[i])){
+//             count++;
+//             return count;
+//         }
+//         if (typeof (str[i]) ==='string' && str[i] === str[i].toUpperCase()){                                  // не работает проверка на заглавную букву
+//             count1++;
+//             return count1;
+//         }
+//     }
+//
+//     if (count === 0){
+//         alert("Добавьте хотябы 1 цыфру");
+//     }
+//     if (count1 === 0){
+//         alert("Введите хотябы одну заглавную букву");
+//     }
+// }
+// correctPas(password);
