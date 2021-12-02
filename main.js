@@ -11,17 +11,23 @@
 // 2 Напишите функцию truncate(str, maxlength), которая проверяет длину строки str,
 //     и если она превосходит maxlength – заменяет конец str на "...",
 //     так чтобы ее длина стала равна maxlength
-let str = "какая длинная строка, тут наверно 44 симолов"
-let maxlength = 30;
-function truncate() {
-    let str1;
-    if (str.length > maxlength){
-        str1.length = maxlength;
-    }
-return str;
-}
 
-console.log(truncate(str, maxlength));
+
+// let str = "какая длинная строка, тут наверно 44 симолов"
+// let maxlength = 30;
+// let str1;
+// function truncate() {
+//
+//     if (str.length > maxlength){
+//         str1 = str.substring(0, maxlength);
+//     }
+// return str1;
+// }
+//
+// console.log(truncate(str, maxlength));
+// console.log(str1);
+
+
 // 3 Напишите функцию getShortName(fullName), которая преобразует полное ФИО fullName в краткое.
 //     Например getShortName("Иванов Сергей Петрович"), функция должна вернуть "Иванов С.П."
 //3
@@ -172,7 +178,7 @@ console.log(truncate(str, maxlength));
 //     for (let i = 0; i < arr.length; i++) {
 //         if (typeof arr[i] === 'number' ){
 //             arr[i] = arr[i] * 2;
-//         } else if (typeof arr[i] === 'string'){
+//         } else if (typeof arr[i] === 'string'){                              // работает
 //             arr[i] = arr[i].split("");
 //         }
 //     }
@@ -208,7 +214,7 @@ console.log(truncate(str, maxlength));
 // const arr1 = [ 'word1', 'word2', 'word3' ];
 // const arr2 = [ 'word1', 'word2', 'word1', 'word3', 'word3' ];
 //
-// function isSpam(arr) {
+// function isSpam(arr) {                                                         // а это работает
 //     const set = new Set(arr);
 //
 //     return set.size < arr.length;
@@ -221,8 +227,19 @@ console.log(truncate(str, maxlength));
 // проверять наличие в ней слов из массива, которые нужно пропускать.
 //     Если в строке есть слово из массива - вернуть true, если нет - false.
 
-
-
+// let arr = ['шлюхи'];
+// let arr1 = ['шлюхи', 'нынче', 'дорогие'];
+// function censure() {
+//     for (let i = 0; i < arr1.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {                                // работает
+//             if (arr1[i] === arr[j]){
+//                 return true;
+//             } else return false;
+//         }
+//     }
+// }
+// censure();
+// console.log(censure());
 // 12 Напишите функцию, которая принимает массив. Функция должна вернуть предложение только из строковых значений массива. Например:
 // arrayToSentence(['Привет', 1, null, 'как', {}, 'дела']) // вернуть Привет как дела
 
@@ -243,20 +260,20 @@ console.log(truncate(str, maxlength));
 // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
 
 
-
+//
 // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-// let format1;
+//
+// let number;
+// let format = '(xxx) xxx-xxxx';
 // function createPhoneNumber(numbers){
-//     let format = '(xxx) xxx-xxxx';
+//
 //     for (number of numbers) {
-//        format1 = format.replace(/x/g, number);
-//     }                                                                  // не работает, меняет все на 0.
-//     return format1;
+//         format = format.replace('x', number);
 //     }
-//
-//
-// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
-// console.log(format1);
+//     return format;
+// }
+// createPhoneNumber(numbers);
+// console.log(format);
 
 
 
