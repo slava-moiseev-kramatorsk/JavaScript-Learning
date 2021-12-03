@@ -4,8 +4,88 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="main.js"></script>
+    <h1 id="hel">Hello</h1>
+    <h1 id="pal">Palmo</h1>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<input type="button" value="Press me" name="a" OnClick="a()">
+<input type="text" id ='inp' value="Hello Palmo">
+<button type="button"  id = "hello"   onClick="b()">Button</button>
+<div class="d-flex">
+     <input type="text" id="th" value="on console">
+    <button type="button" onclick="c()">Press me pls</button>
+</div>
+<button type="button" onclick="header()">Button on header</button>
+<div >
+    <p id="div1" class="text">Тут какой-то текст</p>
+</div>
+<div>
+    <input type="text" id="dis">
+    <button type="button" onclick="d()">Press me again</button>
+</div>
+<div class="sqr">
+    <div class="sqr1"></div>
+    <div class="sqr2"></div>
+</div>
+<button type="button"  onclick="swap()">Change color of kwadratof</button>
+<div>
+    <ul id="ul"></ul>
+    <button type="button" onclick="create()">Press to create new "li"</button>
+</div>
+<div>
+    <textarea id="fruits">
+        яблоко груша помидор апельсин манго
+    </textarea>
+    <button type="button" onclick="sort()">Sort fruits</button>
+</div>
+<script>
+    function a()
+    {
+        alert(" Hello Palmo");
+    }
+    function b()
+    {
+        let change =  document.getElementById('inp');
+            change.value = 'Hello World';
+    }
+    function c(){
+        let consol = document.getElementById('th');
+        console.log(consol.value);
+    }
+    function header(){
+        let head1 = document.getElementById('hel');
+        let head2 = document.getElementById('pal');
+        let hed = head1.textContent;
+        head1.textContent = head2.textContent;
+        head2.textContent = hed;
 
+        let text1 = document.getElementById('div1');
+        text1.style.color = "red";
+    }
+    function d(){
+        let block = document.getElementById('dis');
+        block.disabled = true;
+    }
+    function swap(){
+        let swap1 = document.querySelector("div.sqr1");
+        let swap2 = document.querySelector("div.sqr2");
+        swap1.className = "sqr2";
+        swap2.className = 'sqr1';
+    }
+    function create(){
+         let mainUl = document.getElementById('ul');
+         let plus1 = document.createElement('li');
+         mainUl.prepend(plus1);
+    }
+    function sort(){
+        let newUl = document.getElementById('fruits');
+        let ul = document.createElement('ul');
+        let li = document.createElement('li');
+        newUl.append(ul);
+        ul.append(li);
+    }
+
+</script>
 </body>
 </html>

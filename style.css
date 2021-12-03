@@ -1,0 +1,19 @@
+.text{
+    color: green;
+}
+.sqr{
+    display: flex;
+    justify-content: center;
+}
+.sqr1{
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+.sqr2{
+    padding: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
