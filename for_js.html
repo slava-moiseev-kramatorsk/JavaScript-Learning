@@ -35,9 +35,33 @@
 </div>
 <div>
     <textarea id="fruits">
-        яблоко груша помидор апельсин манго
+        яблоко,груша,помидор,апельсин,манго
     </textarea>
-    <button type="button" onclick="sort()">Sort fruits</button>
+    <ul id="mainUl"></ul>
+    <button type="button" onclick="parse()">Sort fruits</button>
+    <form>
+        <div>
+            <label>Логин</label>
+            <input type="text" id="login">
+        </div>
+        <div>
+            <label>Пароль</label>
+            <input type="text" id="password">
+        </div>
+        <div>
+            <label>Повторите пароль</label>
+            <input type="text" id="repeatPassword">
+        </div>
+        <div>
+            <label>Возраст</label>
+            <input type="text" id="age">
+        </div>
+        <div>
+            <label>E-mail</label>
+            <input type="text" id="mail">
+        </div>
+        <button type="button" id="registration" onclick="newAccount()">Зарегестрироваться</button>
+    </form>
 </div>
 <script>
     function a()
@@ -78,12 +102,24 @@
          let plus1 = document.createElement('li');
          mainUl.prepend(plus1);
     }
-    function sort(){
-        let newUl = document.getElementById('fruits');
-        let ul = document.createElement('ul');
-        let li = document.createElement('li');
-        newUl.append(ul);
-        ul.append(li);
+    function parse(){
+        let newUl = document.getElementById('fruits').value.split(",");
+        let ul = document.getElementById('mainUl');
+        for (let i = 0; i < newUl.length; i++) {
+            let li = document.createElement('li');
+            ul.append(li);
+            li.innerHTML = newUl[i];
+        }
+    }
+    function newAccount(){
+        const log = document.getElementById('login').value.split('');
+        for (let i = 0; i < log.length; i++) {
+            if (log.length < 4 || log.length > 20  && (log[i] === "." || log[i] ==="." || log[i] ==="/" || log[i] === " \ " || loh[i] === "|")){
+            console.log("Ввод не корректен");
+        }
+        }
+
+
     }
 
 </script>
