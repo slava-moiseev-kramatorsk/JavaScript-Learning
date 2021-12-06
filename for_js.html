@@ -119,12 +119,11 @@
         }
     }
     function newAccount(){
-        const log = document.getElementById('login').value.split('');
-        let wrongLog = document.getElementById('login');
+        let log = document.getElementById('login');
         let invisibleLogin = document.getElementById('under-log');
         for (let i = 0; i < log.length; i++) {                                          //логин
             if (log.length < 4 || log.length > 20) {
-            wrongLog.className = 'wrong';
+            log.className = 'wrong';
             invisibleLogin.className = 'show-label';
 
         }
@@ -132,14 +131,17 @@
                 console.log("Ввод не верный");
             }
         }
-        const userAge = document.getElementById('age').value;
-        let wrongAge = document.getElementById('age');
+        log.value = '';
+
+        let userAge = document.getElementById('age');
         let invisibleAge = document.getElementById('under-age');                        //возраст
         if (!userAge || isNaN(userAge) || userAge <= 0){
-            wrongAge.className = 'wrong';
+            userAge.className = 'wrong';
             invisibleAge.className = 'show-label';
         }
-        const passw = document.getElementById('password').value.split('');
+        userAge.value = '';
+
+        let passw = document.getElementById('password');
         let wrongPassword = document.getElementById('password');
         let invisiblePassword = document.getElementById('under-password');
         let count = 0;
@@ -159,14 +161,18 @@
                 wrongPassword.className = 'wrong';
                 invisiblePassword.className = 'show-label';
             }
-        const repPass = document.getElementById('repeatPassword').value.split('');
+        passw.value = '';
+
+        let repPass = document.getElementById('repeatPassword');
         let repaetPass = document.getElementById('repeatPassword');                       //повтор пароля
         let repPassword = document.getElementById('under-password1');
         if (repPass !== passw){
             repaetPass.className = 'wrong';
             repPassword.className = 'show-label';
         }
-        let e_mail = document.getElementById('mail').value.split('');
+        repPass.value = '';
+
+        let e_mail = document.getElementById('mail');
         let wrongMail = document.getElementById('mail');
         let invisibleMail = document.getElementById('under-mail');
         let countMail = 0;                                                             // эл.адрес
@@ -184,7 +190,7 @@
             wrongMail.className = 'wrong';
             invisibleMail.className = 'show-label';
         }
-       wrongMail.value = '';
+       e_mail.value = '';
     }
 
 </script>
