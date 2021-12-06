@@ -20,3 +20,11 @@
 .wrong{
     border-color: red;
 }
+
+
+.invisible-label{
+display: none;
+}
+.show-label{
+    display: block;
+}

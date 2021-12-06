@@ -39,26 +39,33 @@
     </textarea>
     <ul id="mainUl"></ul>
     <button type="button" onclick="parse()">Sort fruits</button>
+
     <form>
         <div>
             <label>Логин</label>
             <input type="text" id="login">
+            <label class="invisible-label" id="under-log">Неверный ввод</label>
         </div>
         <div>
             <label>Пароль</label>
             <input type="text" id="password">
+            <label class="invisible-label" id="under-password">Неверный ввод</label>
         </div>
         <div>
             <label>Повторите пароль</label>
             <input type="text" id="repeatPassword">
+            <label class="invisible-label" id="under-password1">Неверный ввод</label>
+
         </div>
         <div>
             <label>Возраст</label>
             <input type="text" id="age">
+            <label class="invisible-label" id="under-age">Неверный возраст</label>
         </div>
         <div>
             <label>E-mail</label>
             <input type="text" id="mail">
+            <label class="invisible-label" id="under-mail">Неворный ввод</label>
         </div>
         <button type="button" id="registration" onclick="newAccount()">Зарегестрироваться</button>
     </form>
@@ -113,11 +120,13 @@
     }
     function newAccount(){
         const log = document.getElementById('login').value.split('');
-        let wrongLog = document.getElementById('login')
-        for (let i = 0; i < log.length; i++) {
+        let wrongLog = document.getElementById('login');
+        let invisibleLogin = document.getElementById('under-log');
+        for (let i = 0; i < log.length; i++) {                                          //логин
             if (log.length < 4 || log.length > 20) {
-            console.log("Ввод не корректен");
             wrongLog.className = 'wrong';
+            invisibleLogin.className = 'show-label';
+
         }
             if (log[i] === "." || log[i] ==="." || log[i] ==="/" || log[i] === " \ " || log[i] === "|") {
                 console.log("Ввод не верный");
@@ -125,17 +134,21 @@
         }
         const userAge = document.getElementById('age').value;
         let wrongAge = document.getElementById('age');
+        let invisibleAge = document.getElementById('under-age');                        //возраст
         if (!userAge || isNaN(userAge) || userAge <= 0){
             wrongAge.className = 'wrong';
-            alert("Возраст не верный");
+            invisibleAge.className = 'show-label';
         }
         const passw = document.getElementById('password').value.split('');
         let wrongPassword = document.getElementById('password');
+        let invisiblePassword = document.getElementById('under-password');
         let count = 0;
-        for (let i = 0; i < passw.length; i++) {
+        for (let i = 0; i < passw.length; i++) {                                          //пароль
             if (passw.length < 6 || !passw){
                 wrongPassword.className = 'wrong';
                 console.log("пароль слабоват");
+                invisiblePassword.className = 'show-label';
+
             }
             if (isFinite(passw[i])){
                 count++;
@@ -144,8 +157,34 @@
         }
         if (count === 0){
                 wrongPassword.className = 'wrong';
-                alert("Пароль должен содержать хотябы 1 цыфру");
+                invisiblePassword.className = 'show-label';
             }
+        const repPass = document.getElementById('repeatPassword').value.split('');
+        let repaetPass = document.getElementById('repeatPassword');                       //повтор пароля
+        let repPassword = document.getElementById('under-password1');
+        if (repPass !== passw){
+            repaetPass.className = 'wrong';
+            repPassword.className = 'show-label';
+        }
+        let e_mail = document.getElementById('mail').value.split('');
+        let wrongMail = document.getElementById('mail');
+        let invisibleMail = document.getElementById('under-mail');
+        let countMail = 0;                                                             // эл.адрес
+        for (let i = 0; i < e_mail.length; i++) {
+            if (e_mail[i] === "@"){
+                countMail++;
+                return countMail;
+            }
+            if (!e_mail){
+                wrongMail.className = 'wrong';
+                invisibleMail.className = 'show-label';
+            }
+        }
+        if (countMail === 0){
+            wrongMail.className = 'wrong';
+            invisibleMail.className = 'show-label';
+        }
+       wrongMail.value = '';
     }
 
 </script>
