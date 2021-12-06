@@ -163,11 +163,11 @@
             }
         wrongPassword.value = '';
 
-        let repPass = document.getElementById('repeatPassword');
+        let repPass = document.getElementById('repeatPassword').value.split('');
         let repaetPass = document.getElementById('repeatPassword');                       //повтор пароля
         let repPassword = document.getElementById('under-password1');               // for label
         console.log("work");
-        if (repPass !== wrongPassword){
+        if (passw !== repPass){
             console.log("not ok");
             repPass.className = 'wrong';
             repPassword.className = 'show-label';
@@ -184,22 +184,23 @@
         let e_mail = document.getElementById('mail').value.split('');
         let wrongMail = document.getElementById('mail');
         let invisibleMail = document.getElementById('under-mail');
-        let countMail = 0;                                                             // эл.адрес
+        let countMail = 0;                                                  // эл.адрес
         for (let i = 0; i < e_mail.length; i++) {
-            if (e_mail[i] === "@"){
+            if (e_mail[i] === '@'){
                 countMail++;
-                return countMail;
             }
             if (!e_mail){
                 wrongMail.className = 'wrong';
                 invisibleMail.className = 'show-label';
+
             }
         }
         if (countMail === 0){
             wrongMail.className = 'wrong';
             invisibleMail.className = 'show-label';
+            console.log('111');
         }
-       e_mail.value = '';
+       wrongMail.value = '';
     //
     //     const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
     //
