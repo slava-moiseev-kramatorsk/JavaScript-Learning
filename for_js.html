@@ -156,22 +156,30 @@
                 count++;
             }
         }
-        console.log("dff");
+
         if (count === 0){
                 wrongPassword.className = 'wrong';
                 invisiblePassword.className = 'show-label';
             }
-        console.log("dfgdfgdfgdf");         // проверка
         wrongPassword.value = '';
 
-        let repPass = document.getElementById('repeatPassword').value.split('');
+        let repPass = document.getElementById('repeatPassword');
         let repaetPass = document.getElementById('repeatPassword');                       //повтор пароля
-        let repPassword = document.getElementById('under-password1');
-        if (repPass !== passw){
-            repaetPass.className = 'wrong';
+        let repPassword = document.getElementById('under-password1');               // for label
+        console.log("work");
+        if (repPass !== wrongPassword){
+            console.log("not ok");
+            repPass.className = 'wrong';
             repPassword.className = 'show-label';
+            repPassword.className = 'show-label';
+        } else {
+
+            console.log("ok");   // проверка
+
         }
+
         repaetPass.value = '';
+        console.log("check");
 
         let e_mail = document.getElementById('mail').value.split('');
         let wrongMail = document.getElementById('mail');
