@@ -28,7 +28,7 @@
     <div class="sqr1"></div>
     <div class="sqr2"></div>
 </div>
-<button type="button"  onclick="swap()">Change color of kwadratof</button>
+<button type="button"  onclick="swap()">Change color of square</button>
 <div>
     <ul id="ul"></ul>
     <button type="button" onclick="create()">Press to create new "li"</button>
@@ -94,7 +94,7 @@
     function swap(){
         let swap1 = document.querySelector("div.sqr1");
         let swap2 = document.querySelector("div.sqr2");
-        swap1.className = "sqr2";
+        swap1.className = 'sqr2';
         swap2.className = 'sqr1';
     }
     function create(){
@@ -113,13 +113,39 @@
     }
     function newAccount(){
         const log = document.getElementById('login').value.split('');
+        let wrongLog = document.getElementById('login')
         for (let i = 0; i < log.length; i++) {
-            if (log.length < 4 || log.length > 20  && (log[i] === "." || log[i] ==="." || log[i] ==="/" || log[i] === " \ " || loh[i] === "|")){
+            if (log.length < 4 || log.length > 20) {
             console.log("Ввод не корректен");
+            wrongLog.className = 'wrong';
         }
+            if (log[i] === "." || log[i] ==="." || log[i] ==="/" || log[i] === " \ " || log[i] === "|") {
+                console.log("Ввод не верный");
+            }
         }
-
-
+        const userAge = document.getElementById('age').value;
+        let wrongAge = document.getElementById('age');
+        if (!userAge || isNaN(userAge) || userAge <= 0){
+            wrongAge.className = 'wrong';
+            alert("Возраст не верный");
+        }
+        const passw = document.getElementById('password').value.split('');
+        let wrongPassword = document.getElementById('password');
+        let count = 0;
+        for (let i = 0; i < passw.length; i++) {
+            if (passw.length < 6 || !passw){
+                wrongPassword.className = 'wrong';
+                console.log("пароль слабоват");
+            }
+            if (isFinite(passw[i])){
+                count++;
+                return count;
+            }
+        }
+        if (count === 0){
+                wrongPassword.className = 'wrong';
+                alert("Пароль должен содержать хотябы 1 цыфру");
+            }
     }
 
 </script>
