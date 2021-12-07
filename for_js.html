@@ -146,7 +146,7 @@
         let wrongPassword = document.getElementById('password');
         let invisiblePassword = document.getElementById('under-password');
         let count = 0;
-
+        console.log(wrongPassword.value);        //проверка
         for (let i = 0; i < passw.length; i++) {                                          //пароль
             if (passw.length < 6 || !passw){
                 wrongPassword.className = 'wrong';
@@ -161,25 +161,23 @@
                 wrongPassword.className = 'wrong';
                 invisiblePassword.className = 'show-label';
             }
-        wrongPassword.value = '';
+
 
         let repPass = document.getElementById('repeatPassword').value.split('');
         let repaetPass = document.getElementById('repeatPassword');                       //повтор пароля
-        let repPassword = document.getElementById('under-password1');               // for label
-        console.log("work");
-        if (passw !== repPass){
-            console.log("not ok");
+        let repPassword = document.getElementById('under-password1');                       // for label
+        console.log(repaetPass.value);
+
+        if (wrongPassword.value !== repaetPass.value){
+            console.log("work");                           //проверка
             repPass.className = 'wrong';
             repPassword.className = 'show-label';
-            repPassword.className = 'show-label';
         } else {
-
-            console.log("ok");   // проверка
-
+            console.log("ok");                            // проверка
         }
 
         repaetPass.value = '';
-        console.log("check");
+        console.log("check");                             // проверка
 
         let e_mail = document.getElementById('mail').value.split('');
         let wrongMail = document.getElementById('mail');
@@ -198,9 +196,11 @@
         if (countMail === 0){
             wrongMail.className = 'wrong';
             invisibleMail.className = 'show-label';
-            console.log('111');
         }
        wrongMail.value = '';
+        wrongPassword.value = '';
+
+
     //
     //     const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
     //
