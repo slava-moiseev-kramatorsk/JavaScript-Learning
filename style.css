@@ -1,0 +1,24 @@
+.container{
+
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    font-family: Roboto, serif;
+}
+.variable{
+    display: flex;
+    justify-content: normal;
+}
+.position{
+    margin: 50px;
+}
+.text{
+    font-family: Roboto, serif;
+    font-size: 30px;
+}
+.text1{
+    font-family: Roboto, serif;
+    font-size: 15px;
+}
