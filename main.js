@@ -16,6 +16,11 @@ const result = await info;
         console.log(var1);
     }
     mainUah();
+    // onchange()
+    let currencyIn = document.getElementById('list').children[0].value;
+    console.log(currencyIn);
+
+
 }
 
 
