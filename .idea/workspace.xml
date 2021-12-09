@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f723b8e-a16d-45d9-9088-a8b638e09672" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="51a0b816-2025-490c-bc41-fa33793ec737" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/for_js.html" beforeDir="false" afterPath="$PROJECT_DIR$/for_js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
@@ -18,7 +18,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="222WrGGZIRG70xssXccE9RPwXPW" />
+  <component name="ProjectId" id="223WpAGmYQCGWPQg5Wuj7HfWrdf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,12 +33,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4f723b8e-a16d-45d9-9088-a8b638e09672" name="Changes" comment="" />
-      <created>1639036362097</created>
+      <changelist id="51a0b816-2025-490c-bc41-fa33793ec737" name="Changes" comment="" />
+      <created>1639066941836</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1639036362097</updated>
-      <workItem from="1639036364108" duration="11870000" />
+      <updated>1639066941836</updated>
+      <workItem from="1639066949327" duration="6324000" />
     </task>
     <servers />
   </component>
