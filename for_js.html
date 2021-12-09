@@ -28,23 +28,24 @@
         <div class="position">
            <div>
                <p>Меняю</p>
-               <input type="text" list="list">
-               <datalist id="list">
-                   <option id="u1" value="Гривны">
-                   <option value="Доллары">
-                   <option value="Евро">
-               </datalist>
-               <input type="number">
+               <input type="text" value="Гривны">
+
+               <input type="text" id="inp">
            </div>
            <div>
                <p>Получаю</p>
-               <input type="text" list="list1">
-               <datalist id="list1">
-                   <option value="Гривны">
-                   <option value="Доллары">
-                   <option value="Евро">
-               </datalist>
-               <input type="number">
+               <select id="selector">
+                   <option value="USD">Доллар США</option>
+                   <option value="EUR">Евро</option>
+                   <option value="CHF">Швейцарский франк</option>
+               </select>
+<!--               <input type="text" list="list1">-->
+<!--               <datalist id="list1">-->
+<!--                   <option value="Гривны">-->
+<!--                   <option value="Доллары">-->
+<!--                   <option value="Евро">-->
+<!--               </datalist>-->
+               <input type=text id="output">
            </div>
 
         </div>
