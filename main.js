@@ -1,16 +1,15 @@
 const rates = {};
-let input = document.getElementById('inp');
-console.log(input);
-let output = document.getElementById('output');
+let arr = [];
+const input = document.getElementById('inp');
+const output = document.getElementById('output');
 const select = document.getElementById('select');
 
 
-async function getInfo (){
-const response = await  fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
-const info = await response.json();
-const result = await info;                          //// это - массив
+async function getInfo() {
 
-    const obj = Object.assign({}, result);        //теперь это объект и невозможно получить значение,сука.
+    const response = await fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
+    const info = await response.json();
+
 
     rates.usd = info[26].rate;
     rates.eur = info[32].rate;
@@ -18,28 +17,48 @@ const result = await info;                          //// это - массив
     console.log(rates.eur);
     console.log(rates);
     showActual();
+    console.log(info);
+    for (let i = 0; i < info.length; i++) {
+        arr[i] = info[i];
     }
-getInfo();
+    console.log(arr[13].txt);
 
-function showActual(){
-    let var1 = document.getElementById('chf1');            //актуальное значение в табло
-    let var2 = document.getElementById('usd1');
-    let var3 = document.getElementById('eur1');
-    var1.innerHTML = rates.chf;
-    var2.innerHTML = rates.usd;
-    var3.innerHTML = rates.eur;
+    function f1() {
+        let sel = document.getElementById('select');
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(i)
+            let option = document.createElement('option');
+            console.log(arr[i].txt)
+            option.innerHTML = arr[i].txt;
+            sel.append(option);
+        }
+    }
+f1();
 }
 
+getInfo();
 
-input.oninput = function (){
+function showActual() {
+    const frank = document.getElementById('chf1');
+    const dollar = document.getElementById('usd1');
+    const euro = document.getElementById('eur1');
+    frank.innerHTML = rates.chf;
+    dollar.innerHTML = rates.usd;
+    euro.innerHTML = rates.eur;
+}
+
+input.oninput = function () {
     console.log('it work');
     output.value = (input.value / rates[select.value]).toFixed(2);
 }
-select.oninput = function (){
+select.oninput = function () {
     output.value = (input.value / rates[select.value]).toFixed(2);
 }
-// output.value = 12312;
-console.log(rates);
+output.oninput = function () {
+    input.value = (output.value * rates[select.value]).toFixed(2);
+}
+
 
 
 

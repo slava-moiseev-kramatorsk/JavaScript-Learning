@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51a0b816-2025-490c-bc41-fa33793ec737" name="Changes" comment="">
+    <list default="true" id="3606b09f-c8de-4142-984f-682a7269f44d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/for_js.html" beforeDir="false" afterPath="$PROJECT_DIR$/for_js.html" afterDir="false" />
@@ -16,9 +16,17 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="223WpAGmYQCGWPQg5Wuj7HfWrdf" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="226EAcixEphyhiw9F08HUqYsNeh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,16 +41,27 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="51a0b816-2025-490c-bc41-fa33793ec737" name="Changes" comment="" />
-      <created>1639066941836</created>
+      <changelist id="3606b09f-c8de-4142-984f-682a7269f44d" name="Changes" comment="" />
+      <created>1639149493349</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1639066941836</updated>
-      <workItem from="1639066949327" duration="6324000" />
+      <updated>1639149493349</updated>
+      <workItem from="1639149495789" duration="6038000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
